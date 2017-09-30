@@ -1,6 +1,8 @@
 /* This forms the basis of a function that can that multiple fresh numbers 
 */
 
+// Routine for generating and removing fresh numbers on the fly 
+
 var addFreshNum = function(freshId, freshNumArr) {
  		return function() {
     	var newDiv = document.createElement('div');
