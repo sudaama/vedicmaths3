@@ -24,12 +24,4 @@ var removeFreshNum = function(divname) {                          // create a cl
 
 
 
-var createFreshNumId = "freshId_1";
-var freshNumArray = [1, 2, 3, 4];		// this represents a typical array of signed digits 
-
-var fresh = addFreshNum("freshId_1", freshNumArray);
-
-fresh();
-
-
  
