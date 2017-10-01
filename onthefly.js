@@ -12,10 +12,11 @@ var addFreshNum = function(freshFrmId, freshNumId, freshNumArr) {
       newDiv.className = "freshNum";
       // var html = '<p id="' + freshId + '" ' + 'class="freshNum" >A freshNum goes here: ' + freshNumArr + '</p>';
       var html = '<p class="freshNum" >A freshNum goes here: ' + freshNumArr + '</p>';
-      html += '<form id="freshFrmId_' + freshFrmId[0] + '"' + ' action="#">' + '<div id="freshNumId_' + freshNumId[0] +'"></div>' + '<div id="numLabel"></div>' +
+    html += '<form id=' + '"freshFrmId_' + freshFrmId[0] + '"' + 'action="#">' + '<div id="freshNumId_' + freshNumId[0] +'"> </div>' + '<div id="numLabel"></div>' +
     '</form>' + '<div id="dw1" class="margTop"></div>';
+      
       newDiv.innerHTML = html;
-      var butElem = document.getElementById(freshFrmId[0]);
+      var butElem = document.getElementById("freshFrmId_1");
       butElem.appendChild(newDiv)
     };
  };
