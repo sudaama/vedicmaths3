@@ -4,16 +4,18 @@
 // Routine for generating and removing fresh numbers on the fly 
 // we need to add form elements here
 
-var addFreshNum = function(freshId, freshNumArr) {
+window.onload = addFreshNum, removeFreshNum
+
+var addFreshNum = function(freshFrmId, freshNumId, freshNumArr) {
  		return function() {
     	var newDiv = document.createElement('div');
       newDiv.className = "freshNum";
       // var html = '<p id="' + freshId + '" ' + 'class="freshNum" >A freshNum goes here: ' + freshNumArr + '</p>';
       var html = '<p class="freshNum" >A freshNum goes here: ' + freshNumArr + '</p>';
-      html += '<form id="multiplicandFrm" action="#">' + '<div id="multiplicand"></div>' + '<div id="numLabel"></div>' +
+      html += '<form id="freshFrmId_' + freshFrmId[0] + '"' + ' action="#">' + '<div id="freshNumId_' + freshNumId[0] +'"></div>' + '<div id="numLabel"></div>' +
     '</form>' + '<div id="dw1" class="margTop"></div>';
       newDiv.innerHTML = html;
-      var butElem = document.getElementById(freshId);
+      var butElem = document.getElementById(freshFrmId[0]);
       butElem.appendChild(newDiv)
     };
  };
