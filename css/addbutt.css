@@ -1,0 +1,265 @@
+			.greenish 
+				{
+					background: yellow none repeat scroll 0 0;
+					border: 2px solid orange;
+					border-radius: 10px;
+					color: green;
+					font-family: Arial;
+					font-size: 20px;
+					font-weight: bold;
+					width: auto;
+					height: 40px;
+					text-align: center;
+					vertical-align: middle;
+					margin-top: 5px;
+					margin-left: 10px;
+					margin-right: 10px;
+					margin-bottom: 10px;
+				}
+
+			.redish
+				{
+					background: lightgreen none repeat scroll 0 0;
+					color: red;
+					vertical-align: middle;
+					font-size: 20px;
+					font-family: Arial;
+					font-weight: bold;
+					text-align: center;
+					border: 2px solid orange;
+					border-radius: 10px;
+					height: 40px;
+					width: auto;
+					margin-top: 5px;
+					margin-left: 10px;
+					margin-right: 10px;	
+					margin-bottom: 10px;
+				}
+
+			.num
+				{
+					color: black;
+				}
+			span.rekhank
+				{
+					text-decoration: overline;
+					color: red; 
+					font-weight: bold;
+				}
+			span.ord
+				{
+					color: black;
+				}
+
+			.inputdisplay
+				{
+					font-size: 30px;
+					
+				}
+				
+			.inputdisplay2 		/* Styling for carry */
+				{
+					font-size: 20px;
+					
+				}
+			/* Added for improving display readout, 09092017 */
+			span.zero
+				{
+
+					color: blue;
+					font-weight: bold;
+					font-size: 30px;
+				}
+			
+			.Bigsaaah
+				{
+				
+					color: purple; 
+					size: 100px;
+					background: red;
+				}
+				
+			#bigsaah 
+				{
+					text-align: center;
+					width: 800px;
+					height: 60px;
+					border-radius: 5px;
+					border: 2px solid yellow;
+					margin-bottom: 30px;
+				}
+			
+			.submitme
+				{
+					color: green; 
+					font-size: 20px; 
+					margin-top: 10px;
+					font-family: Arial;
+					font-weight: bold;
+				}
+			.inlinewith
+				{
+					display: inline-block;
+					margin-bottom: 40px;
+				}
+				
+			.sepblock
+				{
+					display: block;
+					border: 2px solid lime;
+					padding: 10px 10px 10px;
+					border-radius: 10px;
+					margin-right: 20px;
+					background-color: #0ed811;
+				}
+				
+					
+			.bigcalc
+				{
+					background: orange none repeat scroll 0 0;
+					border: 2px solid lime;
+					border-radius: 10px;
+					color: purple;
+					display: block;
+					padding: 10px;
+				}
+				
+				
+			.indisplay
+				{
+					font-family: dejavu serif;
+					font-size: 30px;
+					font-weight:bold;
+					padding-left: 10px;
+				}
+
+			
+			.subhead 
+				{
+					border: 2px solid black;
+					border-radius: 10px;
+					margin-bottom: 10px;
+					padding-left: 30px;
+					padding-right: 20px;
+					background: lightblue;
+					/* margin-top: 10px; */
+				}
+
+			.subhead3 
+				{
+					/* border: 2px solid black; */
+					border-radius: 5px; 
+					margin-bottom: 10px;
+					padding-left: 10px;
+					padding-right: 10px;
+					background: #b70af4;
+					/* margin-top: 10px; */
+					text-align: center;
+					padding-top: 10px;
+					padding-bottom: 10px;
+					font-family: dejavu serif;
+					font-weight: bold;
+					font-size: 20px;
+				}
+
+			.margbot
+				{
+					margin: auto auto 10px;
+					background-color: #ddf7e8;
+				}
+				
+		.mcand
+			{
+				font-family: Arial;
+				font-size: 25px;
+			}
+		#crunch
+			{
+				text-align: center;
+				padding-top: 50px;
+				/* background-color: violet; */
+				border-radius: 10px;
+				margin-top: 20px;
+			}
+			
+	  #canvas 
+			{
+			/*	border: 1px solid;  */
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 5;
+			/*	opacity: 0.1; */
+			/*	background-color: lightblue; */
+			}
+	.vin
+			{
+				color: red;
+			}
+
+
+	.vin2
+			{
+				color: #f25c1e;
+			}
+
+	#matrixbutts button
+		{
+			color: blue;
+			font-family: verdana;
+			font-size: 15px;
+			padding: 10px;
+		}
+		
+	#resetNumz
+			{
+				margin-left: 30px;
+				color: blue;
+				font-family: verdana;
+				font-size: 15px;
+				padding: 10px;
+			}
+
+	.numForm
+		{
+		padding-top: 10px;
+		padding-bottom: 10px;
+		border-radius: 5px; 
+		background-color: #c0d617;
+	}
+
+.digitInDec
+		{
+		padding-top: 10px;
+		padding-bottom: 10px;
+		border-radius: 5px; 
+		background-color: #818f13;
+		margin-bottom: 10px;
+	}
+
+.vertical-text {
+	transform: rotate(-90deg);
+	transform-origin: left top 0;
+}
+
+.inputSection
+	{
+		background-color: #818f13;
+		padding-top: 50px;
+		padding-bottom: 20px;
+		border-radius: 10px;
+		text-align: center;
+}
+
+.titlestrip
+	{
+		background-color: black;
+		padding-bottom: 10px;
+		padding-top: 10px;
+		margin-bottom: 20px;
+		font-family: Arial;
+		font-weight: bold;
+		font-size: 30px;
+		font-style: normal;
+		color: white;
+	}

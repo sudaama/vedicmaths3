@@ -1,0 +1,284 @@
+
+			.rekhank
+					{	
+						font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif; /* "Times New Roman", Times, serif; */
+						text-decoration: overline;
+						display: inline;
+						color: red;
+						font-size: 50px; 
+						font-weight: bold;	
+					}
+			.ord	
+					{
+						font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+						font-size: 50px;
+						color: black;
+						display: inline;
+						font-weight: bold;
+					}	
+
+					/* Add zero class to enssure all zero digits are blue  */
+
+			.zero
+					{
+						font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+						font-size: 50px;
+						color: blue;
+						display: inline;
+						font-weight: bold;
+					}
+
+			.bigone
+					{	
+						font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+						font-weight: bold;
+						font-size: 50px;
+						color: black;
+					}
+			h3
+					{
+						padding-top: 10px;
+						padding-right: 20px;
+						font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+						font-weight: bold;
+						font-size: 40px;
+					}
+
+			.h3prop
+					{
+						padding-top: 5px;
+						padding-right: 5px;
+						font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+						font-weight: bold;
+						font-size: 20px;
+					}
+
+			
+			.leftalign
+					{
+						text-align: left;
+					}
+					
+			.rightalign
+					{
+						text-align: right;
+						padding-right: 10px;
+						font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+						font-weight: bold;
+						font-size: 40px
+						
+					}
+					
+			table
+					{
+						margin-top: 30px;
+					/*	border-collapse: collapse;   */
+						border: 0px solid black;
+						padding: 5px;
+						width: auto;
+						/* padding-left: 30px; */
+						margin: auto;
+					}
+			/*
+			table#tableMain 
+					{
+						float: right;
+						left: 500px;
+						margin-top: -10px;
+						position: fixed;
+						right: 20px;
+						top: 10px;
+					}
+			*/
+			table#tableMain 
+					{
+						float: right;
+					}
+					
+			.tableDisplay2
+					{
+						width: 1000px;
+						height: 500px;
+						border: 2px black solid;
+					}
+					
+			table.displayTable2
+					{
+						width: auto;
+						height: 25px;
+					/*	border: 5px green solid; */
+						margin-top: 0px;
+					}
+						
+			table td
+					{
+					/*	padding-left: 30px;  Disable padding */
+					border-radius: 10px;
+					-moz-border-radius: 10px;
+					}
+					
+			table td.multip 
+					{
+						border: 2px solid lime;
+						border-radius: 10px;
+						padding-left: 20px;
+						padding-right: 20px;
+						background-color: lightcyan;
+					}
+					
+			table tr
+					{
+						border-spacing: 10px;
+					}
+			table tr#idnum1.tableRowz1&2, tr#idnum2.tableRowz1&2
+				{
+					border-bottom: 3px solid red;
+					background-color: lightblue;
+					border-radius: 10px;
+				}
+
+			table th.labelz, td.labelz, tr.labelz
+				{
+					font-size: 18px;
+					color: black;
+					padding: 5px;
+					font-weight: bold;
+				}
+				
+			tr#idnum1, tr#idnum2 
+				{
+					background-color: aquamarine;
+					border-bottom: 3px solid red;
+					/* opacity: .50; */
+					border-radius: 10px;
+				}
+				
+			tr#idnum5, tr#idnum6 
+				{
+					background-color: yellow;
+					border-bottom: 3px solid green;
+					border-radius: 10px;
+					/* opacity: .50; */
+				}
+			
+			th sup{
+				font-size: 15px;
+				color: blue;
+				padding-left: 2px;
+			}
+			#displaytab1
+					{
+						width: auto;
+						height: auto;
+						float: right;
+					}
+					
+			.displayprop
+					{
+						padding: 5px;
+						font-family: Arial;
+						font-size: 30px;
+						font-weight: bold;
+						margin: 0px;
+					}		
+			.carry	
+					{
+						padding: 5px;
+						font-family: Arial;
+						font-size: 15px;
+						font-weight: bold;
+						color: orange;
+						text-align: center;
+					}
+		/*	#displaytab2
+					{
+						width: auto;
+						height: auto;
+						border: 2px solid black;
+						float: right;
+						clear: both
+					}
+		*/
+			#displaytab2
+					{
+						width: auto;
+						height: 60px;
+						float: right;
+						clear: both
+					}
+			#displaytab3
+					{
+						width: auto;
+						height: auto;
+						float: right;
+						clear: both
+					}
+					
+			#displaytab4
+					{
+						width: auto;
+						height: auto;
+						float: right;
+						clear: both
+					}
+					
+			#displaytab5
+					{
+						width: auto;
+						height: auto;
+						float: right;
+						clear: both
+					}
+					
+	/*		#displaytab1 div.displayTable
+					{
+						width: auto;
+						height: auto;
+						border: 3px solid red;
+					}
+	*/			
+			#bigbutt
+					{
+						font-size: 30px;
+						padding: 10px;
+						color: yellow;
+						background: red;
+						border-radius: 10px;
+					}
+			#mainBit
+					{
+						clear: both;
+					}
+				
+			.entry-content h3 
+					{
+						font-size: 30px;
+						font-weight: bold;
+					}
+			.sameline
+				{
+					display: inline-block;
+				}
+			.vinappClass
+				{
+					font-size: 20px;
+					color: black;
+					background: orange;
+				}
+
+			.numLabel
+				{
+					text-align: left;
+				}
+
+			#mathblag {
+				margin-bottom: 30px;
+			}
+			
+			#mylogo {
+				    
+				top: -40px;
+				left: 300px;
+				width: 50px;
+				height: 50px;
+			}
