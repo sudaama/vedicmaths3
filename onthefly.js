@@ -7,7 +7,7 @@
 
 window.onload = addFreshNum, removeFreshNum
 
-var addFreshNum = function(freshNumArr, multNumId) {
+var addFreshNum = function(multNumId) {
  		return function() {
  		var freshFrmId = Math.floor(Math.random() * 10000000) + 1;	// generate a random number for form id
  		var freshNumId = Math.floor(Math.random() * 10000000) + 1;	// generate a random number for Num id
@@ -18,14 +18,16 @@ var addFreshNum = function(freshNumArr, multNumId) {
  		var vinculumId = Math.floor(Math.random() * 10000000) + 1;	// generate a random number for vinculumId id
  		var digitDisplayId = Math.floor(Math.random() * 10000000) + 1;	// generate a random number for digitDisplay id
     var numberDisplayId = Math.floor(Math.random() * 10000000) + 1;  // generate a random number for numberDisplay id
+    var numLabelId = Math.floor(Math.random() * 10000000) + 1;  // generate a random number for numLabelId id
 
 
     	var newDiv = document.createElement('div');
       	newDiv.className = "freshNum";
       	// var html = '<p class="freshNum" >A freshNum goes here: ' + freshNumArr + '</p>';
     	var html = '';
-    	html += '<form id=' + '"freshFrmId_' + freshFrmId + '"' + 'action="#">' 
-    	+ '<div id="freshNumId_' + freshNumId +'"> </div>' + '<div id="numLabel"></div>'; 
+    	html +=     '<form id=' + '"freshFrmId_' + freshFrmId + '"' + 'action="#">' + 
+                  '<div id="freshNumId_' + freshNumId +'"> </div>' + 
+                  '<div id="numLabel_' + numLabelId + '"' + '></div>'; 
 
     	html +=	   '<div><p class="text-vedic"><button type="button" id="butt_' + buttIdAdd + '"' + 
                    'class="rounded padMe addColor" data-toggle="tooltip" data-placement="left"' + 
@@ -59,7 +61,6 @@ var addFreshNum = function(freshNumArr, multNumId) {
     	// html += '<hr>';
       
       	newDiv.innerHTML = html;
-
       	var butElem = document.getElementById(multNumId);	// insert the id of the number container
       	butElem.appendChild(newDiv);
 
@@ -69,15 +70,18 @@ var addFreshNum = function(freshNumArr, multNumId) {
     	var buttIdAddVar = "butt_" + buttIdAdd;
     	var getAddButtId = document.getElementById(buttIdAddVar);	// get Id of newly created Add button
     	getAddButtId.addEventListener("click", addSelect_1);	// add event listener to add button
-    	
-    	var removeSelectFunk_1 = removeSelectFunk(dispAddId);	// create closure using same newly created display id
+    	getAddButtId.addEventListener("click", getNumzFunkMixed);
+
+
+    	// remove digit from display
+      var removeSelectFunk_1 = removeSelectFunk(dispAddId);	// create closure using same newly created display id
     	var buttRemoveVar = "buttRemove_" + buttIdRemove;		// use convenient id equivalent 
     	var getRemoveButtId = document.getElementById(buttRemoveVar); // get id of remove button
     	getRemoveButtId.addEventListener("click", removeSelectFunk_1);	// assign click to button thru id
     	
       
 
-      // Proper number display section
+      // Proper number display section, 
 
       var newDiv2 = document.createElement('div');
       newDiv2.className = "freshDisplay";
@@ -87,8 +91,15 @@ var addFreshNum = function(freshNumArr, multNumId) {
       var butElem2 = document.getElementById(multNumId); // insert the id of the number container
       butElem2.appendChild(newDiv2);
 
-    	// var getNumzFunkMixed = getNumzVar("dw1", "numLabel", "mixed", 0);		// Closure set for id ="dw1"
+      var numDispProp =  'numberDisplayId_' + numberDisplayId;  // convenient id
+      var numLabel = 'numLabel_' + numLabelId; 
 
+      var formId = 'freshFrmId_' + freshFrmId;                  // convenient form id
+    	var getNumzFunkMixed = getNumzVar(numDispProp, numLabel, "mixed", formId);		// Closure set for id ="dw1"
+      
+      var disMixNumId ='displayMixed_' + mixedId;
+      var getMixNum = document.getElementById(disMixNumId);
+      getMixNum.addEventListener("click", getNumzFunkMixed);
 
     	};
  };

@@ -2,10 +2,10 @@
 // we have now randomly created form and number ids within onthefly.js
 
 
-var freshNumArray = [1, 2, 3, 4];		// this represents a typical array of signed digits 
+// var freshNumArray = [1, 2, 3, 4];		// this represents a typical array of signed digits 
 var multNumId = "multNumId";			// id of the multi number container 		
 
-var addFreshNumber = addFreshNum(freshNumArray, multNumId);
+var addFreshNumber = addFreshNum(multNumId);
 
 var getButtId = document.getElementById("buttFresh");
 getButtId.addEventListener("click", addFreshNumber);
