@@ -5,7 +5,7 @@
 // need to replace fresshNumArr with a number object that has methods to change it, as before
 // ie. ord, mix, vin
 
-window.onload = addFreshNum, removeFreshNum
+window.onload = addFreshNum, removeFreshNum;
 
 var addFreshNum = function(multNumId) {
  		return function() {
@@ -26,8 +26,7 @@ var addFreshNum = function(multNumId) {
       	// var html = '<p class="freshNum" >A freshNum goes here: ' + freshNumArr + '</p>';
     	var html = '';
     	html +=     '<form id=' + '"freshFrmId_' + freshFrmId + '"' + 'action="#">' + 
-                  '<div id="freshNumId_' + freshNumId +'"> </div>' + 
-                  '<div id="numLabel_' + numLabelId + '"' + '></div>'; 
+                  '<div id="freshNumId_' + freshNumId +'"> </div>'; 
 
     	html +=	   '<div><p class="text-vedic"><button type="button" id="butt_' + buttIdAdd + '"' + 
                    'class="rounded padMe addColor" data-toggle="tooltip" data-placement="left"' + 
@@ -55,6 +54,8 @@ var addFreshNum = function(multNumId) {
 
     	html += 	'<div id="digitDisplayId_' + digitDisplayId + '"' + '>';
 
+      html +=  '<div id="numLabel_' + numLabelId + '"' + '></div>';
+
     	html += 	'</form>'; // end of the form
 
       
@@ -71,6 +72,7 @@ var addFreshNum = function(multNumId) {
     	var getAddButtId = document.getElementById(buttIdAddVar);	// get Id of newly created Add button
     	getAddButtId.addEventListener("click", addSelect_1);	// add event listener to add button
     	getAddButtId.addEventListener("click", getNumzFunkMixed);
+
 
 
     	// remove digit from display
@@ -95,12 +97,25 @@ var addFreshNum = function(multNumId) {
       var numLabel = 'numLabel_' + numLabelId; 
 
       var formId = 'freshFrmId_' + freshFrmId;                  // convenient form id
-    	var getNumzFunkMixed = getNumzVar(numDispProp, numLabel, "mixed", formId);		// Closure set for id ="dw1"
-      
-      var disMixNumId ='displayMixed_' + mixedId;
+    	
+      var getNumzFunkMixed = getNumzVar(numDispProp, numLabel, "mixed", formId);		// Closure set for id ="dw1"
+      var getNumzFunkOrdinary = getNumzVar(numDispProp, numLabel, "ordinary", formId);
+      var getNumzFunkVinculum = getNumzVar(numDispProp, numLabel, "vinculum", formId);
+
+
+
+      var disMixNumId = 'displayMixed_' + mixedId;
       var getMixNum = document.getElementById(disMixNumId);
       getMixNum.addEventListener("click", getNumzFunkMixed);
 
+      var disMixOrdId = 'displayOrdinary_' + ordinaryId;
+      var getOrdNum = document.getElementById(disMixOrdId);
+      getOrdNum.addEventListener("click", getNumzFunkOrdinary);
+
+      var disMixVinId = 'displayVinculum_' + vinculumId;
+      var getVinNum = document.getElementById(disMixVinId);
+      getVinNum.addEventListener("click", getNumzFunkVinculum);
+      
     	};
  };
  
