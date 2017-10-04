@@ -22,9 +22,8 @@ var addFreshNum = function(multNumId) {
 
 
     	var newDiv = document.createElement('div');
-      	newDiv.className = "freshNum";
-      	// var html = '<p class="freshNum" >A freshNum goes here: ' + freshNumArr + '</p>';
-    	var html = '';
+      newDiv.className = "freshNum";
+      var html = '';
     	html +=     '<form id=' + '"freshFrmId_' + freshFrmId + '"' + 'action="#">' + 
                   '<div id="freshNumId_' + freshNumId +'"> </div>'; 
 
@@ -61,13 +60,13 @@ var addFreshNum = function(multNumId) {
       
     	// html += '<hr>';
       
-      	newDiv.innerHTML = html;
-      	var butElem = document.getElementById(multNumId);	// insert the id of the number container
-      	butElem.appendChild(newDiv);
+      newDiv.innerHTML = html;
+      var butElem = document.getElementById(multNumId);	// insert the id of the number container
+      butElem.appendChild(newDiv);
 
-      	// add digit and display  
-      	var dispAddId = "digitDisplayId_" + digitDisplayId; // use this id for both add and remove
-      	var addSelect_1 = addSelectFunk(dispAddId);	// use the newly created digitDisplayId for the closure 
+      // add digit and display  
+      var dispAddId = "digitDisplayId_" + digitDisplayId; // use this id for both add and remove
+      var addSelect_1 = addSelectFunk(dispAddId);	// use the newly created digitDisplayId for the closure 
     	var buttIdAddVar = "butt_" + buttIdAdd;
     	var getAddButtId = document.getElementById(buttIdAddVar);	// get Id of newly created Add button
     	getAddButtId.addEventListener("click", addSelect_1);	// add event listener to add button
@@ -81,10 +80,8 @@ var addFreshNum = function(multNumId) {
     	var getRemoveButtId = document.getElementById(buttRemoveVar); // get id of remove button
     	getRemoveButtId.addEventListener("click", removeSelectFunk_1);	// assign click to button thru id
     	
-      
 
       // Proper number display section, 
-
       var newDiv2 = document.createElement('div');
       newDiv2.className = "freshDisplay";
       var html2 = '';
@@ -101,8 +98,6 @@ var addFreshNum = function(multNumId) {
       var getNumzFunkMixed = getNumzVar(numDispProp, numLabel, "mixed", formId);		// Closure set for id ="dw1"
       var getNumzFunkOrdinary = getNumzVar(numDispProp, numLabel, "ordinary", formId);
       var getNumzFunkVinculum = getNumzVar(numDispProp, numLabel, "vinculum", formId);
-
-
 
       var disMixNumId = 'displayMixed_' + mixedId;
       var getMixNum = document.getElementById(disMixNumId);
