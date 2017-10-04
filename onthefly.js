@@ -69,18 +69,7 @@ var addFreshNum = function(multNumId) {
       var addSelect_1 = addSelectFunk(dispAddId);	// use the newly created digitDisplayId for the closure 
     	var buttIdAddVar = "butt_" + buttIdAdd;
     	var getAddButtId = document.getElementById(buttIdAddVar);	// get Id of newly created Add button
-    	getAddButtId.addEventListener("click", addSelect_1);	// add event listener to add button
-    	getAddButtId.addEventListener("click", getNumzFunkMixed);
-
-
-
-    	// remove digit from display
-      var removeSelectFunk_1 = removeSelectFunk(dispAddId);	// create closure using same newly created display id
-    	var buttRemoveVar = "buttRemove_" + buttIdRemove;		// use convenient id equivalent 
-    	var getRemoveButtId = document.getElementById(buttRemoveVar); // get id of remove button
-    	getRemoveButtId.addEventListener("click", removeSelectFunk_1);	// assign click to button thru id
     	
-
       // Proper number display section, 
       var newDiv2 = document.createElement('div');
       newDiv2.className = "freshDisplay";
@@ -94,8 +83,8 @@ var addFreshNum = function(multNumId) {
       var numLabel = 'numLabel_' + numLabelId; 
 
       var formId = 'freshFrmId_' + freshFrmId;                  // convenient form id
-    	
-      var getNumzFunkMixed = getNumzVar(numDispProp, numLabel, "mixed", formId);		// Closure set for id ="dw1"
+      
+      var getNumzFunkMixed = getNumzVar(numDispProp, numLabel, "mixed", formId);    // Closure set for id ="dw1"
       var getNumzFunkOrdinary = getNumzVar(numDispProp, numLabel, "ordinary", formId);
       var getNumzFunkVinculum = getNumzVar(numDispProp, numLabel, "vinculum", formId);
 
@@ -110,6 +99,22 @@ var addFreshNum = function(multNumId) {
       var disMixVinId = 'displayVinculum_' + vinculumId;
       var getVinNum = document.getElementById(disMixVinId);
       getVinNum.addEventListener("click", getNumzFunkVinculum);
+
+
+      // only add event Listener for add and remove buttons after display buttons have
+      // been assigned
+      getAddButtId.addEventListener("click", addSelect_1);	// add event listener to add button
+    	getAddButtId.addEventListener("click", getNumzFunkMixed);
+
+
+    	// remove digit from display
+      var removeSelectFunk_1 = removeSelectFunk(dispAddId);	// create closure using same newly created display id
+    	var buttRemoveVar = "buttRemove_" + buttIdRemove;		// use convenient id equivalent 
+    	var getRemoveButtId = document.getElementById(buttRemoveVar); // get id of remove button
+    	getRemoveButtId.addEventListener("click", removeSelectFunk_1);	// assign click to button thru id
+    	getRemoveButtId.addEventListener("click", getNumzFunkMixed);
+
+      
       
     	};
  };
