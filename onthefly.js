@@ -115,7 +115,6 @@ var addFreshNum = function(multNumId) {
     	getRemoveButtId.addEventListener("click", getNumzFunkMixed);
 
       
-      
     	};
  };
  
