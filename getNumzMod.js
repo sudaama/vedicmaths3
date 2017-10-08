@@ -19,7 +19,7 @@ var getNumzVar = function(inlineDisplayId, numberLabel, toggle, numberIndex) {
 		}
 
 		// Using closure created previously...see signDigitProp.js
-		digitArray1 = crtSingArr(temp1);				
+		digitArray1 = crtSingArr(temp1); 		// 	see crtSingArr declaration in signDigitProp 			
 		console.log( digitArray1() );
 		
 		getvinculumNum = getvinculumFunk(txt); 
@@ -53,7 +53,6 @@ var getNumzVar = function(inlineDisplayId, numberLabel, toggle, numberIndex) {
 				txtstr += '<span class="ord inputdisplay">' + txtarray1[j] + '</span>' + "&nbsp";
 			}
 		}
-		
 		// dw1 is id in display under multipler heading 
 		// txtstr = txtarray1.join("");
 		document.getElementById(inlineDisplayId).innerHTML = txtstr;
