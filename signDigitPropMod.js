@@ -54,11 +54,28 @@ var crtSingArr = function(formArray) {
     };
 };
 */
+
+// Bodge to ignore 5 buttons on form....
+/*
 var crtSingArr = function(formArray) {
   return function() {
     var arr3 = [];      // declare empty array here...better than global
     for(var i = 2; i < formArray.length/2 - 1; i++) { // fill in sign and digit
       var temp = new SingleDigit(formArray[i * 2 + 1 ], formArray[i  * 2 + 2]);
+      arr3.push(temp);
+    }
+    return arr3;    // return arr3 to the function
+    };
+};
+*/
+
+// This works perfectly now, adjusted for exact number of buttons (5 so far)
+// If number of buttons changes, the formula will have to change.
+var crtSingArr = function(formArray) {
+  return function() {
+    var arr3 = [];      // declare empty array here...better than global
+    for(var i = 0; i < (formArray.length - 5)/2; i++) { // fill in sign and digit
+      var temp = new SingleDigit(formArray[i * 2 + 5], formArray[i  * 2 + 6]);
       arr3.push(temp);
     }
     return arr3;    // return arr3 to the function
