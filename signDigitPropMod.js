@@ -16,7 +16,7 @@ function ArrayDigits(mixedArr) {
   var digitArr = mixedArr;
   var arr3 = [];      // declare empty array here...better than global
     for(var i = 0; i < digitArr.length/2; i++) { // fill in sign and digit
-      var temp = new SingleDigit(digitArr[i * 2 - 1], digitArr[i * 2]);
+      var temp = new SingleDigit(digitArr[(i + 4)* 2 - 1], digitArr[(i + 4) * 2]);
       arr3.push(temp);
     }
    this.digitArray = arr3;
