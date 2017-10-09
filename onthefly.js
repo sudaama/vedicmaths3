@@ -19,7 +19,8 @@ var addFreshNum = function(multNumId) {
  		var digitDisplayId = Math.floor(Math.random() * 10000000) + 1;	// generate a random number for digitDisplay id
     var numberDisplayId = Math.floor(Math.random() * 10000000) + 1;  // generate a random number for numberDisplay id
     var numLabelId = Math.floor(Math.random() * 10000000) + 1;  // generate a random number for numLabelId id
-
+// These five buttons are messing up the code used for getting the element values from the form
+// Either move them or add another dummy button and re-adjust code in getNumzMod.js
 
     	var newDiv = document.createElement('div');
       newDiv.className = "freshNum";
@@ -51,6 +52,7 @@ var addFreshNum = function(multNumId) {
     				'with (+) and (-) digits and each digit <= 5">Display: <span class="text-vedic">' + 
     				'Vinculum Number</span></button></p></div>';
 
+   
     	html += 	'<div id="digitDisplayId_' + digitDisplayId + '"' + '>';
 
       html +=  '<div id="numLabel_' + numLabelId + '"' + '></div>';

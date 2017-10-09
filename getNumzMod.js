@@ -14,7 +14,7 @@ var getNumzVar = function(inlineDisplayId, numberLabel, toggle, numberIndex) {
 		var temp1 = [];			// create temp array to store form element values: signs and digits in sequence
 
 		for (var i = 0; i < firstform.length; i++) {
-			txt += firstform.elements[i].value;
+			txt += firstform.elements[i].value;			// 5 buttons in form field before digits
 			temp1.push(firstform.elements[i].value);
 		}
 
