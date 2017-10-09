@@ -21,6 +21,7 @@ var getNumzVar = function(inlineDisplayId, numberLabel, toggle, numberIndex) {
 		// Using closure created previously...see signDigitProp.js
 		digitArray1 = crtSingArr(temp1); 		// 	see crtSingArr declaration in signDigitProp 			
 		console.log( digitArray1() );
+		console.log(txt);
 		
 		getvinculumNum = getvinculumFunk(txt); 
 		
