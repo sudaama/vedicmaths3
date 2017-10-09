@@ -42,17 +42,29 @@ ArrayDigits.prototype.getNum = function() {
   return this.numProp;            // return array of signed digits
 };
 
-
+/*
 var crtSingArr = function(formArray) {
   return function() {
     var arr3 = [];      // declare empty array here...better than global
     for(var i = 0; i < formArray.length/2; i++) { // fill in sign and digit
-      var temp = new SingleDigit(formArray[i * 2 - 1], formArray[i  * 2]);
+      var temp = new SingleDigit(formArray[i * 2 + 1], formArray[i  * 2 + 2]);
       arr3.push(temp);
     }
     return arr3;    // return arr3 to the function
     };
 };
+*/
+var crtSingArr = function(formArray) {
+  return function() {
+    var arr3 = [];      // declare empty array here...better than global
+    for(var i = 2; i < formArray.length/2 - 1; i++) { // fill in sign and digit
+      var temp = new SingleDigit(formArray[i * 2 + 1 ], formArray[i  * 2 + 2]);
+      arr3.push(temp);
+    }
+    return arr3;    // return arr3 to the function
+    };
+};
+
 
 var createSingArray = crtSingArr(document.forms[0]);
 
