@@ -12,32 +12,39 @@ var getNumzVar = function(inlineDisplayId, numberLabel, toggle, numberIndex) {
 								// firstform.elements[i].value gives sign or number depending
 		var digitArray1 ;
 		var temp1 = [];			// create temp array to store form element values: signs and digits in sequence
-		/*
-		for (var i = 0; i < firstform.length; i++) {
-			txt += firstform.elements[i].value;			// 5 buttons in form field before digits
-
-			if(i % 2 == 0){
-				temp1.push(parseInt(firstform.elements[i].value) );	
-			}
-			else {
-				temp1.push(firstform.elements[i].value);
-			}
-		}
-		*/
-		// take number of buttons into consideration
-		var amntOfButtons = 5;			// again, we have to take number of buttons into consideration
+		
+		// take number of buttons into consideration...below code works for 5 buttons
+		
 		for (var i = 0; i < (firstform.length); i++) {
 			txt += firstform.elements[i].value;			// 5 buttons in form field before digits
 
-			if(i % 2 == 0){ // if odd number i.e a digit, convert to INTEGER
+			if(i % 2 == 0){ // if odd number i.e a digit, convert to INTEGER...only works for 
+							// odd number of buttons...change formula for even number
 				temp1.push(parseInt(firstform.elements[i].value) );	
 			}
 			else {			// else if even i.e. a sign, just push to array as it is
 				temp1.push(firstform.elements[i].value);
 			}
 		}
+		
+		/*
+		This test code works, partially, adjusts for the number of buttons but does not
+		work with crtSingArr and ArrayDigits... Needs work! 
+		var buttNum = 5;
+		for (var i = 0; i < (firstform.length - buttNum); i++) {
+			txt += firstform.elements[i + buttNum].value;			// 5 buttons in form field before digits
 
-
+			if(i % 2 == 0){ // if odd number i.e a digit, convert to INTEGER...only works for 
+							// odd number of buttons...change formula for even number
+				temp1.push(firstform.elements[i + buttNum].value);	
+			}
+			else {			// else if even i.e. a sign, just push to array as it is
+				temp1.push(firstform.elements[i + buttNum].value);
+			}
+		}
+		*/
+		
+		// console.log(temp1);
 		// Using closure created previously...see signDigitProp.js
 		digitArray1 = crtSingArr(temp1); 		// 	see crtSingArr declaration in signDigitProp 			
 		var singleDigitArray = new ArrayDigits(temp1);	// create an array of SingleDigit elements
