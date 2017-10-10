@@ -58,7 +58,6 @@ var addFreshNum = function(multNumId) {
 
     	html += 	'</form>'; // end of the form
 
-      
     	// html += '<hr>';
       
       newDiv.innerHTML = html;
@@ -114,7 +113,6 @@ var addFreshNum = function(multNumId) {
     	var getRemoveButtId = document.getElementById(buttRemoveVar); // get id of remove button
     	getRemoveButtId.addEventListener("click", removeSelectFunk_1);	// assign click to button thru id
     	getRemoveButtId.addEventListener("click", getNumzFunkMixed);
-
       
     	};
  };

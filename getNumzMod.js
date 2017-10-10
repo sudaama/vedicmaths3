@@ -29,7 +29,8 @@ var getNumzVar = function(inlineDisplayId, numberLabel, toggle, numberIndex) {
 		
 		/*
 		This test code works, partially, adjusts for the number of buttons but does not
-		work with crtSingArr and ArrayDigits... Needs work! 
+		work with crtSingArr and ArrayDigits...This is because those routines take number of buttons 
+		into consideration.... Needs more work! 
 		var buttNum = 5;
 		for (var i = 0; i < (firstform.length - buttNum); i++) {
 			txt += firstform.elements[i + buttNum].value;			// 5 buttons in form field before digits
