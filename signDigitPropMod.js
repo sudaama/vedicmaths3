@@ -12,7 +12,9 @@ SingleDigit.prototype.displayDigits = function() {
 
 
 // Constructor: build an array of SingleDigit objects 
-function ArrayDigits(mixedArr) {
+// Original routine made for simple array with pair-wise elements
+/*
+function ArrayDigits(mixedArr) { // mixed array is in alternate form: sign-digit-sign-digit-sign... 
   var digitArr = mixedArr;
   var arr3 = [];      // declare empty array here...better than global
     for(var i = 0; i < digitArr.length/2; i++) { // fill in sign and digit
@@ -20,6 +22,21 @@ function ArrayDigits(mixedArr) {
       arr3.push(temp);
     }
    this.digitArray = arr3;
+}
+
+*/
+
+
+function ArrayDigits(mixedArrInput){
+    var digitArr = mixedArrInput;
+    var amntButts = 5;  // number of buttons in form
+    var arr3 = [];      // below is formula for stepping thru 'sign-digit' pairs after 
+                        // taking buttons into consideration 
+    for(var i = 0; i < (digitArr.length - amntButts)/2; i++) { // fill in sign and digit
+      var temp = new SingleDigit(digitArr[i * 2 + amntButts], digitArr[i  * 2 + amntButts + 1]);
+      arr3.push(temp);
+    }
+    this.digitArray = arr3;    // this.digitArray gets value of arr3 
 }
 
 
@@ -73,12 +90,14 @@ var crtSingArr = function(formArray) {
 // If number of buttons changes, the formula will have to change.
 var crtSingArr = function(formArray) {
   return function() {
-    var arr3 = [];      // declare empty array here...better than global
-    for(var i = 0; i < (formArray.length - 5)/2; i++) { // fill in sign and digit
-      var temp = new SingleDigit(formArray[i * 2 + 5], formArray[i  * 2 + 6]);
+    var amntButts = 5;  // number of buttons in form
+    var arr3 = [];      // below is formula for stepping thru 'sign-digit' pairs after 
+                        // taking buttons into consideration 
+    for(var i = 0; i < (formArray.length - amntButts)/2; i++) { // fill in sign and digit
+      var temp = new SingleDigit(formArray[i * 2 + amntButts], formArray[i  * 2 + amntButts + 1]);
       arr3.push(temp);
     }
-    return arr3;    // return arr3 to the function
+    return arr3;    // return arr3, array of SingleDigits to the function expression variable crtSingArr
     };
 };
 

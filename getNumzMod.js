@@ -15,11 +15,21 @@ var getNumzVar = function(inlineDisplayId, numberLabel, toggle, numberIndex) {
 
 		for (var i = 0; i < firstform.length; i++) {
 			txt += firstform.elements[i].value;			// 5 buttons in form field before digits
-			temp1.push(firstform.elements[i].value);
+
+			if(i % 2 == 0){
+				temp1.push(parseInt(firstform.elements[i].value) );	
+			}
+			else {
+				temp1.push(firstform.elements[i].value);
+			}
 		}
 
 		// Using closure created previously...see signDigitProp.js
 		digitArray1 = crtSingArr(temp1); 		// 	see crtSingArr declaration in signDigitProp 			
+		var singleDigitArray = new ArrayDigits(temp1);	// create an array of SingleDigit elements
+		var signedDigitz = singleDigitArray.getNum();	// create an array of Signed Digits
+		console.log(signedDigitz);						// display array of signed digits
+
 		console.log( digitArray1() );
 		console.log(txt);
 		

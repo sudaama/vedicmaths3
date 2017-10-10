@@ -52,7 +52,6 @@ var addFreshNum = function(multNumId) {
     				'with (+) and (-) digits and each digit <= 5">Display: <span class="text-vedic">' + 
     				'Vinculum Number</span></button></p></div>';
 
-
     	html += 	'<div id="digitDisplayId_' + digitDisplayId + '"' + '>';
 
       html +=  '<div id="numLabel_' + numLabelId + '"' + '></div>';
