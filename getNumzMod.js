@@ -12,7 +12,7 @@ var getNumzVar = function(inlineDisplayId, numberLabel, toggle, numberIndex) {
 								// firstform.elements[i].value gives sign or number depending
 		var digitArray1 ;
 		var temp1 = [];			// create temp array to store form element values: signs and digits in sequence
-
+		/*
 		for (var i = 0; i < firstform.length; i++) {
 			txt += firstform.elements[i].value;			// 5 buttons in form field before digits
 
@@ -23,6 +23,20 @@ var getNumzVar = function(inlineDisplayId, numberLabel, toggle, numberIndex) {
 				temp1.push(firstform.elements[i].value);
 			}
 		}
+		*/
+		// take number of buttons into consideration
+		var amntOfButtons = 5;			// again, we have to take number of buttons into consideration
+		for (var i = 0; i < (firstform.length); i++) {
+			txt += firstform.elements[i].value;			// 5 buttons in form field before digits
+
+			if(i % 2 == 0){ // if odd number i.e a digit, convert to INTEGER
+				temp1.push(parseInt(firstform.elements[i].value) );	
+			}
+			else {			// else if even i.e. a sign, just push to array as it is
+				temp1.push(firstform.elements[i].value);
+			}
+		}
+
 
 		// Using closure created previously...see signDigitProp.js
 		digitArray1 = crtSingArr(temp1); 		// 	see crtSingArr declaration in signDigitProp 			
