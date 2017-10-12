@@ -19,6 +19,7 @@ var addFreshNum = function(multNumId) {
  		var digitDisplayId = Math.floor(Math.random() * 10000000) + 1;	// generate a random number for digitDisplay id
     var numberDisplayId = Math.floor(Math.random() * 10000000) + 1;  // generate a random number for numberDisplay id
     var numLabelId = Math.floor(Math.random() * 10000000) + 1;  // generate a random number for numLabelId id
+    var add2bigArrayId = Math.floor(Math.random() * 10000000) + 1;  // generate a random number for 'add-to-global' id
 // These five buttons are messing up the code used for getting the element values from the form
 // Either move them or add another dummy button and re-adjust code in getNumzMod.js
 
@@ -51,7 +52,11 @@ var addFreshNum = function(multNumId) {
     				'data-toggle="tooltip" data-placement="right" title="Display the Vinculum number i.e.  ' + 
     				'with (+) and (-) digits and each digit <= 5">Display: <span class="text-vedic">' + 
     				'Vinculum Number</span></button></p></div>';
-
+      /*      
+      html +=   '<button type="button" id="buttAdd2BigArray_' + add2bigArrayId + '"' +  'class="rounded padMe"'
+                + 'data-toggle="tooltip" data-placement="right" title="Add Mix Number to Global">' + 
+                'Add Number to Global Array</button>';
+      */
     	html += 	'<div id="digitDisplayId_' + digitDisplayId + '"' + '>';
 
       html +=  '<div id="numLabel_' + numLabelId + '"' + '></div>';
@@ -124,8 +129,5 @@ var removeFreshNum = function(divname) {                          // create a cl
     };
 };
 
-
-
-
-
+      
  
