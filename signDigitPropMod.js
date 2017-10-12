@@ -29,7 +29,7 @@ function ArrayDigits(mixedArr) { // mixed array is in alternate form: sign-digit
 
 function ArrayDigits(mixedArrInput){
     var digitArr = mixedArrInput;
-    var amntButts = 6;  // number of buttons in form
+    
     var arr3 = [];      // below is formula for stepping thru 'sign-digit' pairs after 
                         // taking buttons into consideration 
     for(var i = 0; i < (digitArr.length - amntButts)/2; i++) { // fill in sign and digit
@@ -90,7 +90,7 @@ var crtSingArr = function(formArray) {
 // If number of buttons changes, the formula will have to change.
 var crtSingArr = function(formArray) {
   return function() {
-    var amntButts = 5;  // number of buttons in form
+    var amntButts = 6;  // number of buttons in form
     var arr3 = [];      // below is formula for stepping thru 'sign-digit' pairs after 
                         // taking buttons into consideration 
     for(var i = 0; i < (formArray.length - amntButts)/2; i++) { // fill in sign and digit
