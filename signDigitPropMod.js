@@ -1,4 +1,3 @@
-// Proper
 
 function SingleDigit(sign, digit) {
     this.sign = sign;
@@ -10,23 +9,8 @@ SingleDigit.prototype.displayDigits = function() {
   return '{' + this.sign + ', ' + this.digit + '}';
 };
 
-
 // Constructor: build an array of SingleDigit objects 
 // Original routine made for simple array with pair-wise elements
-/*
-function ArrayDigits(mixedArr) { // mixed array is in alternate form: sign-digit-sign-digit-sign... 
-  var digitArr = mixedArr;
-  var arr3 = [];      // declare empty array here...better than global
-    for(var i = 0; i < digitArr.length/2; i++) { // fill in sign and digit
-      var temp = new SingleDigit(digitArr[i * 2], digitArr[i * 2 + 1]);
-      arr3.push(temp);
-    }
-   this.digitArray = arr3;
-}
-
-*/
-
-
 function ArrayDigits(mixedArrInput){
     var digitArr = mixedArrInput;
     
@@ -38,7 +22,6 @@ function ArrayDigits(mixedArrInput){
     }
     this.digitArray = arr3;    // this.digitArray gets value of arr3 
 }
-
 
 ArrayDigits.prototype.getNum = function() {
   this.numz = []; // for each SingleDigit in the array of SingleDigit objects, get the digit part
@@ -59,38 +42,11 @@ ArrayDigits.prototype.getNum = function() {
   return this.numProp;            // return array of signed digits
 };
 
-/*
-var crtSingArr = function(formArray) {
-  return function() {
-    var arr3 = [];      // declare empty array here...better than global
-    for(var i = 0; i < formArray.length/2; i++) { // fill in sign and digit
-      var temp = new SingleDigit(formArray[i * 2 + 1], formArray[i  * 2 + 2]);
-      arr3.push(temp);
-    }
-    return arr3;    // return arr3 to the function
-    };
-};
-*/
-
-// Bodge to ignore 5 buttons on form....
-/*
-var crtSingArr = function(formArray) {
-  return function() {
-    var arr3 = [];      // declare empty array here...better than global
-    for(var i = 2; i < formArray.length/2 - 1; i++) { // fill in sign and digit
-      var temp = new SingleDigit(formArray[i * 2 + 1 ], formArray[i  * 2 + 2]);
-      arr3.push(temp);
-    }
-    return arr3;    // return arr3 to the function
-    };
-};
-*/
-
 // This works perfectly now, adjusted for exact number of buttons (5 so far)
 // If number of buttons changes, the formula will have to change.
 var crtSingArr = function(formArray) {
   return function() {
-    var amntButts = 6;  // number of buttons in form
+   // var amntButts = 6;  // number of buttons in form (made Global now)
     var arr3 = [];      // below is formula for stepping thru 'sign-digit' pairs after 
                         // taking buttons into consideration 
     for(var i = 0; i < (formArray.length - amntButts)/2; i++) { // fill in sign and digit
@@ -101,21 +57,4 @@ var crtSingArr = function(formArray) {
     };
 };
 
-
 var createSingArray = crtSingArr(document.forms[0]);
-
-
-/* test data
-var digArr = ['+', 9, '-', 7, '+', 3, '-', 5];
-var digArr2 = ['+', 6, '-', 8, '+', 4, '-', 7];
-var digArr3 = ['-', 8, '-', 1, '+', 9, '-', 5];
-
-var newTing = new ArrayDigits(digArr);
-var newTing2 = new ArrayDigits(digArr2);
-var newTing3 = new ArrayDigits(digArr3);
-
-console.log(newTing.getNum());
-console.log(newTing2.getNum());
-console.log(newTing3.getNum());
-
-*/

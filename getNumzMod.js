@@ -12,36 +12,12 @@ var getNumzVar = function(inlineDisplayId, numberLabel, toggle, numberIndex) {
 								// firstform.elements[i].value gives sign or number depending
 		var digitArray1 ;
 		var temp1 = [];			// create temp array to store form element values: signs and digits in sequence
-		var bigSignDigitzArr = [];
+		
 		// take number of buttons into consideration...below code works for 5 buttons
-		/*
 		for (var i = 0; i < (firstform.length); i++) {
 			txt += firstform.elements[i].value;			// 5 buttons in form field before digits
 			
-			// if odd number of buttons then run this code
-			if(amntButts % 2 != 0){
-				if(i % 2 == 0){ // odd number of buttons
-					temp1.push(parseInt(firstform.elements[i].value) );	
-				}
-				else {			// else if even i.e. a sign, just push to array as it is
-					temp1.push(firstform.elements[i].value);
-			
-				}	// else if even number of buttons run this code
-			}
-			else {
-				if(i % 2 == 0){ // even number of buttons.
-					temp1.push(firstform.elements[i].value);	
-				}
-				else {			// else if even i.e. a sign, just push to array as it is
-					temp1.push(parseInt(firstform.elements[i].value) );
-				}
-			}
-		}
-*/
-		for (var i = 0; i < (firstform.length); i++) {
-			txt += firstform.elements[i].value;			// 5 buttons in form field before digits
-			
-			// if even number of buttons then run this code
+			// if even number of buttons then run this code (refactor at some stage)
 			if (amntButts % 2 == 0){
 				if(i % 2 == 0){ // even number of buttons.
 					temp1.push(firstform.elements[i].value);	
@@ -51,37 +27,16 @@ var getNumzVar = function(inlineDisplayId, numberLabel, toggle, numberIndex) {
 				}
 			}
 
-			else {
-				if(i % 2 != 0){ // odd number of buttons ie when i
+			else {	
+				if(i % 2 != 0){ // odd number of buttons makes the first i in display also odd 
 					temp1.push(firstform.elements[i].value);	
 				}
 				else {			// else if even i.e. a sign, just push to array as it is
 					temp1.push(parseInt(firstform.elements[i].value) );
 				}	// else if even number of buttons run this code
-			}
-			
+			}	
 		}
 
-
-		
-		/*
-		This test code works, partially, adjusts for the number of buttons but does not
-		work with crtSingArr and ArrayDigits...This is because those routines take number of buttons 
-		into consideration.... Needs more work! 
-		var buttNum = 5;
-		for (var i = 0; i < (firstform.length - buttNum); i++) {
-			txt += firstform.elements[i + buttNum].value;			// 5 buttons in form field before digits
-
-			if(i % 2 == 0){ // if odd number i.e a digit, convert to INTEGER...only works for 
-							// odd number of buttons...change formula for even number
-				temp1.push(firstform.elements[i + buttNum].value);	
-			}
-			else {			// else if even i.e. a sign, just push to array as it is
-				temp1.push(firstform.elements[i + buttNum].value);
-			}
-		}
-		*/
-		
 		// console.log(temp1);
 		// Using closure created previously...see signDigitProp.js
 		digitArray1 = crtSingArr(temp1); 		// 	see crtSingArr declaration in signDigitProp 			
@@ -89,8 +44,8 @@ var getNumzVar = function(inlineDisplayId, numberLabel, toggle, numberIndex) {
 		var signedDigitz = singleDigitArray.getNum();	// create an array of Signed Digits
 		console.log("array of signed digits", signedDigitz);						// display array of signed digits
 
-		console.log( "result of using crtSingArr(temp1)", digitArray1() );
-		console.log("result of text str txt" , txt);
+		console.log(digitArray1() );
+		console.log(txt);
 		
 		bigSignDigitzArr.push(signedDigitz);
 
@@ -113,7 +68,6 @@ var getNumzVar = function(inlineDisplayId, numberLabel, toggle, numberIndex) {
 			break;
 		}
 				
-		
 		for(var j = 0; j < txtarray1.length; j++) {
 			if(txtarray1[j] < 0) {
 				txtstr += '<span class="rekhank inputdisplay">'+ -(txtarray1[j]) + '</span>'+ "&nbsp"; 

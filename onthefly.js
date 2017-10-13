@@ -124,6 +124,11 @@ var addFreshNum = function(multNumId) {
     	var getRemoveButtId = document.getElementById(buttRemoveVar); // get id of remove button
     	getRemoveButtId.addEventListener("click", removeSelectFunk_1);	// assign click to button thru id
     	getRemoveButtId.addEventListener("click", getNumzFunkMixed);
+
+
+      // set up button to add signed arrays to global array
+      
+
       
     	};
  };
@@ -136,4 +141,4 @@ var removeFreshNum = function(divname) {                          // create a cl
 };
 
  var amntButts = 7;  // number of buttons in form besides the create number buttons (make global)     
- 
+ //  bigSignDigitzArr = []; // make this a Global variable
