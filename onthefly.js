@@ -6,7 +6,7 @@
 // ie. ord, mix, vin
 
 window.onload = addFreshNum, removeFreshNum;
-
+var elementNum = 0;
 var addFreshNum = function(multNumId) {
  		return function() {
  		var freshFrmId = Math.floor(Math.random() * 10000000) + 1;	// generate a random number for form id
@@ -125,20 +125,27 @@ var addFreshNum = function(multNumId) {
     	getRemoveButtId.addEventListener("click", removeSelectFunk_1);	// assign click to button thru id
     	getRemoveButtId.addEventListener("click", getNumzFunkMixed);
 
-
-      // set up button to add signed arrays to global array
+      // elementNum++;
       
-
-      
+      var getSignedProp = getSigned(formId, elementNum++);       // creating a closure for siged digit array
+      var buttSignedDig ='buttAdd2BigArray_' + add2bigArrayId;
+      var getSignedDig = document.getElementById(buttSignedDig);
+      getSignedDig.addEventListener("click", getSignedProp);
     	};
  };
- 
+  
 var removeFreshNum = function(divname) {                          // create a closure...remove a digit.
     return function() {
-        var getparentDiv = document.getElementById(divname);
+          var getparentDiv = document.getElementById(divname);
         getparentDiv.removeChild( getparentDiv.lastChild );
     };
 };
 
+
+
  var amntButts = 7;  // number of buttons in form besides the create number buttons (make global)     
  //  bigSignDigitzArr = []; // make this a Global variable
+
+
+ // set up button to add signed arrays to global array
+      

@@ -47,7 +47,7 @@ var getNumzVar = function(inlineDisplayId, numberLabel, toggle, numberIndex) {
 		console.log(digitArray1() );
 		console.log(txt);
 		
-		bigSignDigitzArr.push(signedDigitz);
+		// bigSignDigitzArr.push(signedDigitz);
 
 		getvinculumNum = getvinculumFunk(txt); 
 		
@@ -84,6 +84,85 @@ var getNumzVar = function(inlineDisplayId, numberLabel, toggle, numberIndex) {
 		document.getElementById(inlineDisplayId).innerHTML = txtstr;
 		document.getElementById(numberLabel).innerHTML = "Number Form: " + '<span class="toggle">' + toggle + '</span>';
 							
-		return txtarray1 ;	// txtarray1 as function return value  
+		return txtarray1;	// txtarray1 as function return value  
 	};
+};
+
+
+// create a separate function that calculates the pure signed digits
+
+var getSigned = function(numberIndex, elementNum) {
+		
+	return function() {
+		var firstform = document.forms[numberIndex];
+		var txt = "";
+		var txtstr = "";		// numberIndex is the index position of the number entered (for multiple number entries)
+		var txtarray1 = [];		// will contain an array of numbers, firstform.elements[0] contains the sign
+								// firstform.elements[1] contains the number, 
+								// firstform.elements[i].value gives sign or number depending
+		var digitArray1 ;
+		var temp1 = [];			// create temp array to store form element values: signs and digits in sequence
+		
+		// take number of buttons into consideration...below code works for 5 buttons
+		for (var i = 0; i < (firstform.length); i++) {
+			txt += firstform.elements[i].value;			// 5 buttons in form field before digits
+			
+			// if even number of buttons then run this code (refactor at some stage)
+			if (amntButts % 2 == 0){
+				if(i % 2 == 0){ // even number of buttons.
+					temp1.push(firstform.elements[i].value);	
+				}
+				else {			// else if even i.e. a sign, just push to array as it is
+					temp1.push(parseInt(firstform.elements[i].value) );
+				}
+			}
+
+			else {	
+				if(i % 2 != 0){ // odd number of buttons makes the first i in display also odd 
+					temp1.push(firstform.elements[i].value);	
+				}
+				else {			// else if even i.e. a sign, just push to array as it is
+					temp1.push(parseInt(firstform.elements[i].value) );
+				}	// else if even number of buttons run this code
+			}	
+		}
+
+		var singleDigitArray2 = new ArrayDigits(temp1);	// create an array of SingleDigit elements
+		var signedDigitz2 = singleDigitArray2.getNum();	// create an array of Signed Digits
+		console.log("proper array of signed digits", signedDigitz2);						// display array of signed digits
+		
+		/*
+		if(bigSignDigitzArr.length != 0 ){
+			bigSignDigitzArr[elementNum].pop();
+			bigSignDigitzArr[elementNum].push(signedDigitz2);
+		}
+			
+		else {	// if no elements in array, add element
+			bigSignDigitzArr[elementNum].push(signedDigitz2);
+		}
+		*/
+		if(bigSignDigitzArr.length != 0 ){
+			if(bigSignDigitzArr[elementNum]){
+				bigSignDigitzArr[elementNum].pop();
+				bigSignDigitzArr[elementNum].push(signedDigitz2);
+			}
+			else{ // if element does not exist, then create it
+				bigSignDigitzArr.push([]);
+				bigSignDigitzArr[elementNum].pop();
+				bigSignDigitzArr[elementNum].push(signedDigitz2);	
+			}
+		}
+			
+		else {	// if no elements in array, add element
+			bigSignDigitzArr.push([]);
+			bigSignDigitzArr[elementNum].pop();
+			bigSignDigitzArr[elementNum].push(signedDigitz2);
+		}	
+
+			
+		
+	};
+
+return signedDigitz2;
+
 };
