@@ -111,8 +111,9 @@ var addFreshNum = function(multNumId) {
       var getVinNum = document.getElementById(disMixVinId);
       getVinNum.addEventListener("click", getNumzFunkVinculum);
 
+      // only add event Listener for add and remove buttons after 
 
-      // only add event Listener for add and remove buttons after display buttons have
+// var freshNumArray = [1, 2, 3, 4];    // this represents a display buttons have
       // been assigned
       getAddButtId.addEventListener("click", addSelect_1);	// add event listener to add button
     	getAddButtId.addEventListener("click", getNumzFunkMixed);
@@ -122,8 +123,12 @@ var addFreshNum = function(multNumId) {
       var removeSelectFunk_1 = removeSelectFunk(dispAddId);	// create closure using same newly created display id
     	var buttRemoveVar = "buttRemove_" + buttIdRemove;		// use convenient id equivalent 
     	var getRemoveButtId = document.getElementById(buttRemoveVar); // get id of remove button
-    	getRemoveButtId.addEventListener("click", removeSelectFunk_1);	// assign click to button thru id
+    	
+      
+
+      getRemoveButtId.addEventListener("click", removeSelectFunk_1);	// assign click to button thru id
     	getRemoveButtId.addEventListener("click", getNumzFunkMixed);
+      
 
       // elementNum++;
       
@@ -140,9 +145,16 @@ var removeFreshNum = function(divname) {                          // create a cl
         getparentDiv.removeChild( getparentDiv.lastChild );
     };
 };
-
-
-
+/*
+var removeGlobElem  = function() {
+    return function() {
+        if(bigSignDigitzArr.length != 0) { // if array exists
+            bigSignDigitzArr.pop();
+            console.log("just took off last element in array");
+        }
+    };
+};
+*/
  var amntButts = 7;  // number of buttons in form besides the create number buttons (make global)     
  //  bigSignDigitzArr = []; // make this a Global variable
 

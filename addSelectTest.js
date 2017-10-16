@@ -58,5 +58,9 @@ var removeSelectFunk = function(divname) {                          // create a 
     return function() {
         var getparentDiv = document.getElementById(divname);
         getparentDiv.removeChild( getparentDiv.lastChild );
+
     };
 };
+
+// Remove the last element in the global array
+

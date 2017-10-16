@@ -90,7 +90,7 @@ var getNumzVar = function(inlineDisplayId, numberLabel, toggle, numberIndex) {
 
 
 // create a separate function that calculates the pure signed digits
-
+// elementNum refers to the index of the global array of numbers...
 var getSigned = function(numberIndex, elementNum) {
 		
 	return function() {
@@ -131,16 +131,10 @@ var getSigned = function(numberIndex, elementNum) {
 		var signedDigitz2 = singleDigitArray2.getNum();	// create an array of Signed Digits
 		console.log("proper array of signed digits", signedDigitz2);						// display array of signed digits
 		
-		/*
-		if(bigSignDigitzArr.length != 0 ){
-			bigSignDigitzArr[elementNum].pop();
-			bigSignDigitzArr[elementNum].push(signedDigitz2);
-		}
-			
-		else {	// if no elements in array, add element
-			bigSignDigitzArr[elementNum].push(signedDigitz2);
-		}
-		*/
+		
+		// Have written this back-to-front but it still works
+		// If the global array has at least one array in it then pop off the last one
+		// and push on the new array. Basically, this routine refreshes a particular number array 
 		if(bigSignDigitzArr.length != 0 ){
 			if(bigSignDigitzArr[elementNum]){
 				bigSignDigitzArr[elementNum].pop();
@@ -153,14 +147,11 @@ var getSigned = function(numberIndex, elementNum) {
 			}
 		}
 			
-		else {	// if no elements in array, add element
+		else {	// if no elements in array whatsoever, add element (this code should be first!)
 			bigSignDigitzArr.push([]);
 			bigSignDigitzArr[elementNum].pop();
 			bigSignDigitzArr[elementNum].push(signedDigitz2);
 		}	
-
-			
-		
 	};
 
 return signedDigitz2;
