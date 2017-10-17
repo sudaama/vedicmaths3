@@ -12,7 +12,7 @@ var addFreshNumber = addFreshNum(multNumId);
 var getButtId = document.getElementById("buttFresh");
 getButtId.addEventListener("click", addFreshNumber);
 
-
+/***************************************************************************************************/
 var removeFreshNumber = removeFreshNum(multNumId);	// use the id of the container div and remove last child
 // var removeGlobalArrElem = removeGlobElem();      // take out last element in global array, declared in
 													// addSelectTest.js

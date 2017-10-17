@@ -141,8 +141,12 @@ var addFreshNum = function(multNumId) {
   
 var removeFreshNum = function(divname) {                          // create a closure...remove a digit.
     return function() {
-          var getparentDiv = document.getElementById(divname);
-        getparentDiv.removeChild( getparentDiv.lastChild );
+          if(divname){
+            var getparentDiv = document.getElementById(divname);
+            if(getparentDiv.lastChild){
+                getparentDiv.removeChild( getparentDiv.lastChild );
+            }
+          }
     };
 };
 /*

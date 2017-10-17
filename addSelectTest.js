@@ -18,7 +18,7 @@ var numGen = function ()  {
 };
 
 //var buttonId = "butt";                          // Identity of Add Digit Button 
-//var readOut = "multiplicand";                   // Identity of first child first form multiplicanFrm
+//var readOut = "multiplicand";                   // Identity Createof first child first form multiplicanFrm
 // var buttR = "buttRemove";                       // Identity of Remove Digit Button
 
 
@@ -53,7 +53,7 @@ var addSelectFunk = function(digitReadOut) {
     };                                                              // end of function (2)
 };                                                                  // end od addSelectFunk
 
-
+/*
 var removeSelectFunk = function(divname) {                          // create a closure...remove a digit.
     return function() {
         var getparentDiv = document.getElementById(divname);
@@ -61,6 +61,14 @@ var removeSelectFunk = function(divname) {                          // create a 
 
     };
 };
-
-// Remove the last element in the global array
-
+*/
+var removeSelectFunk = function(divname) {                          // create a closure...remove a digit.
+    return function() {
+          if(divname){
+            var getparentDiv = document.getElementById(divname);
+            if(getparentDiv.lastChild){
+                getparentDiv.removeChild( getparentDiv.lastChild );
+            }
+          }
+    };
+};
