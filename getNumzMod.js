@@ -82,7 +82,10 @@ var getNumzVar = function(inlineDisplayId, numberLabel, toggle, numberIndex) {
 		// dw1 is id in display under multipler heading 
 		// txtstr = txtarray1.join("");
 		document.getElementById(inlineDisplayId).innerHTML = txtstr;
-		document.getElementById(numberLabel).innerHTML = "Number Form: " + '<span class="toggle">' + toggle + '</span>';
+		
+		if(document.getElementById(numberLabel)){
+			document.getElementById(numberLabel).innerHTML = "Number Form: " + '<span class="toggle">' + toggle + '</span>';
+		}		
 							
 		return txtarray1;	// txtarray1 as function return value  
 	};
