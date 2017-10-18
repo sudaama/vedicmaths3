@@ -151,14 +151,7 @@ var getSigned = function(numberIndex, elementNum) {
 		}
 			
 		else {	// if no elements in array whatsoever, add element (this code should be first!)
-			bigSignDigitzA
-Unexpected bad things will happen if you don’t read this!
-
-This action CANNOT be undone. This will permanently delete the sudaama/vedicmaths2 repository, wiki, issues, and comments, and remove all collaborator associations.
-
-Please type in the name of the repository to confirm.
-
-rr.push([]);
+			bigSignDigitzArr.push([]);
 			bigSignDigitzArr[elementNum].pop();
 			bigSignDigitzArr[elementNum].push(signedDigitz2);
 		}	
