@@ -151,7 +151,7 @@ var removeFreshNum = function(divname) {                          // create a cl
             }
           }
           
-          elementNum--;     // when a number is destroyed decrement the count by one.
+         // elementNum--;     // when a number is destroyed decrement the count by one.
     };
 };
 /*
