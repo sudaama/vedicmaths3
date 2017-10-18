@@ -53,12 +53,19 @@ var addSelectFunk = function(digitReadOut) {
     };                                                              // end of function (2)
 };                                                                  // end od addSelectFunk
 
+<<<<<<< HEAD
 /*
+=======
+>>>>>>> offshoot1
 var removeSelectFunk = function(divname) {                          // create a closure...remove a digit.
     return function() {
-        var getparentDiv = document.getElementById(divname);
-        getparentDiv.removeChild( getparentDiv.lastChild );
-
+          if(divname){
+            var getparentDiv = document.getElementById(divname);
+            if(getparentDiv.lastChild){
+                getparentDiv.removeChild( getparentDiv.lastChild );
+                console.log("removing a digit");
+            }
+          }
     };
 };
 */

@@ -7,6 +7,8 @@
 
 window.onload = addFreshNum, removeFreshNum;
 var elementNum = 0;
+
+
 var addFreshNum = function(multNumId) {
  		return function() {
  		var freshFrmId = Math.floor(Math.random() * 10000000) + 1;	// generate a random number for form id
@@ -145,8 +147,16 @@ var removeFreshNum = function(divname) {                          // create a cl
             var getparentDiv = document.getElementById(divname);
             if(getparentDiv.lastChild){
                 getparentDiv.removeChild( getparentDiv.lastChild );
+<<<<<<< HEAD
             }
           }
+=======
+               console.log("just took off last child"); 
+            }
+          }
+          
+         // elementNum--;     // when a number is destroyed decrement the count by one.
+>>>>>>> offshoot1
     };
 };
 /*

@@ -85,7 +85,12 @@ var getNumzVar = function(inlineDisplayId, numberLabel, toggle, numberIndex) {
 		
 		if(document.getElementById(numberLabel)){
 			document.getElementById(numberLabel).innerHTML = "Number Form: " + '<span class="toggle">' + toggle + '</span>';
+<<<<<<< HEAD
 		}					
+=======
+		}		
+							
+>>>>>>> offshoot1
 		return txtarray1;	// txtarray1 as function return value  
 	};
 };
