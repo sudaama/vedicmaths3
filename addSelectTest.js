@@ -56,9 +56,13 @@ var addSelectFunk = function(digitReadOut) {
 
 var removeSelectFunk = function(divname) {                          // create a closure...remove a digit.
     return function() {
-        var getparentDiv = document.getElementById(divname);
-        getparentDiv.removeChild( getparentDiv.lastChild );
-
+          if(divname){
+            var getparentDiv = document.getElementById(divname);
+            if(getparentDiv.lastChild){
+                getparentDiv.removeChild( getparentDiv.lastChild );
+                console.log("removing a digit");
+            }
+          }
     };
 };
 
