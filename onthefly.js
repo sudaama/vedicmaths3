@@ -155,11 +155,10 @@ var removeFreshNum = function(divname) {                          // create a cl
             }
           }
           
-<<<<<<< HEAD
          // elementNum--;     // when a number is destroyed decrement the count by one.
-=======
+
          elementNum--;     // when a number is destroyed decrement the count by one.
->>>>>>> offshoot2
+
     };
 };
 
