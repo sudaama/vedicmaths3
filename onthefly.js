@@ -101,7 +101,8 @@ var addFreshNum = function(multNumId) {
       var getNumzFunkOrdinary = getNumzVar(numDispProp, numLabel, "ordinary", formId);
       var getNumzFunkVinculum = getNumzVar(numDispProp, numLabel, "vinculum", formId);
 
-      var disMixNumId = 'displayMixed_' + mixedId;
+      var disMixNumId = 'displayMixed_' + mixedId;// inlineDisplayId is id of display of the actual final number (multiplicand or multiplier)
+
       var getMixNum = document.getElementById(disMixNumId);
       getMixNum.addEventListener("click", getNumzFunkMixed);
 
@@ -126,8 +127,7 @@ var addFreshNum = function(multNumId) {
     	var buttRemoveVar = "buttRemove_" + buttIdRemove;		// use convenient id equivalent 
     	var getRemoveButtId = document.getElementById(buttRemoveVar); // get id of remove button
     	
-      
-
+    
       getRemoveButtId.addEventListener("click", removeSelectFunk_1);	// assign click to button thru id
     	getRemoveButtId.addEventListener("click", getNumzFunkMixed);
       
@@ -141,7 +141,11 @@ var addFreshNum = function(multNumId) {
     	};
  };
   
-var removeFreshNum = function(divname) {                          // create a closure...remove a digit.
+
+
+
+
+var removeFreshNum = function(divname) {                          // create a closure...remove a number
     return function() {
           if(divname){
             var getparentDiv = document.getElementById(divname);
@@ -151,9 +155,15 @@ var removeFreshNum = function(divname) {                          // create a cl
             }
           }
           
+<<<<<<< HEAD
          // elementNum--;     // when a number is destroyed decrement the count by one.
+=======
+         elementNum--;     // when a number is destroyed decrement the count by one.
+>>>>>>> offshoot2
     };
 };
+
+
 /*
 var removeGlobElem  = function() {
     return function() {
@@ -165,6 +175,8 @@ var removeGlobElem  = function() {
 };
 */
  var amntButts = 7;  // number of buttons in form besides the create number buttons (make global)     
+
+
  //  bigSignDigitzArr = []; // make this a Global variable
 
 
