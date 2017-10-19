@@ -53,7 +53,7 @@ var addSelectFunk = function(digitReadOut) {
     };                                                              // end of function (2)
 };                                                                  // end od addSelectFunk
 
-<<<<<<< HEAD
+
 /*
 =======
 >>>>>>> offshoot1
